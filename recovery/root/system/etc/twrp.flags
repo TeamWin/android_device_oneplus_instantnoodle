@@ -1,11 +1,12 @@
 # mount point    	fstype     	device                 device2                      flags
-/metadata					ext4				/dev/block/by-name/metadata													flags=display="Metadata";wrappedkey
-/firmware					vfat				/dev/block/bootdevice/by-name/modem									flags=slotselect;display="Firmware";mounttodecrypt;fsflags="ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0 wait,slotselect"
 /recovery					emmc				/dev/block/bootdevice/by-name/recovery							flags=slotselect;display="Recovery";backup=1;flashimg=1
 /boot							emmc				/dev/block/bootdevice/by-name/boot									flags=slotselect;display="Boot";backup=1;flashimg=1
+/metadata      ext4    /dev/block/bootdevice/by-name/metadata                    flags=display="Metadata";backup=1;wrappedkey
 
 # Persistent Firmware & Properties
 /persist					ext4				/dev/block/bootdevice/by-name/persist 							flags=display="Persist";fsflags=ro;backup=1
+/firmware      vfat    /dev/block/bootdevice/by-name/modem                       flags=display="Firmware"
+/misc          emmc    /dev/block/bootdevice/by-name/misc
 
 # Modem partitions
 /modem						emmc				/dev/block/bootdevice/by-name/modem									flags=slotselect;backup=1;display="Modem"
@@ -26,5 +27,3 @@
 
 # Removable storage
 /usbstorage      	vfat    		/dev/block/sdg1        /dev/block/sdg     					flags=fsflags=utf8;display="USB OTG";storage;wipeingui;removable
-
-/metadata         ext4     /dev/block/bootdevice/by-name/metadata
