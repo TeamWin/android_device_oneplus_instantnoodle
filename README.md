@@ -44,7 +44,7 @@ To build, execute these commands in order
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL=C
 lunch twrp_instantnoodle-eng
-mka adbd recoveryimage
+make -j16 adbd recoveryimage
 ```
 
 To test it:
