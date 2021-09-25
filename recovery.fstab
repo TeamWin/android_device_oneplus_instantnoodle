@@ -1,11 +1,12 @@
 #<src>                  <mnt_point>    <type>  <mnt_flags and options>   <fs_mgr_flags>
 # Logical partitions
-system                  /system        ext4    ro,barrier=1,discard      wait,slotselect
-system_ext              /system_ext    ext4    ro,barrier=1,discard      wait,slotselect
-product                 /product       ext4    ro,barrier=1,discard      wait,slotselect
-vendor                  /vendor        ext4    ro,barrier=1,discard      wait,slotselect
-odm                     /odm           ext4    ro,barrier=1,discard      wait,slotselect
+system                  /system        ext4    ro,barrier=1,discard      wait,slotselect,logical
+system_ext              /system_ext    ext4    ro,barrier=1,discard      wait,slotselect,logical
+product                 /product       ext4    ro,barrier=1,discard      wait,slotselect,logical
+vendor                  /vendor        ext4    ro,barrier=1,discard      wait,slotselect,logical
+odm                     /odm           ext4    ro,barrier=1,discard      wait,slotselect,logical
 
+/dev/block/by-name/metadata                             /metadata              ext4    noatime,nosuid,nodev,discard,sync                    wrappedkey,wait,check,formattable,first_stage_mount
 # Userdata partition
 /dev/block/bootdevice/by-name/userdata                  /data                  f2fs    noatime,nosuid,nodev,discard,reserve_root=32768,resgid=1065,fsync_mode=nobarrier,inlinecrypt    latemount,wait,check,formattable,fileencryption=ice,wrappedkey,keydirectory=/metadata/vold/metadata_encryption,quota,reservedsize=512M,sysfs_path=/sys/devices/platform/soc/1d84000.ufshc,checkpoint=fs
 

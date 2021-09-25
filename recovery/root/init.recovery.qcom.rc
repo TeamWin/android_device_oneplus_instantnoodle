@@ -69,3 +69,6 @@ on fs
     # Set fscklog permission
     chown root system /dev/fscklogs/log
     chmod 0770 /dev/fscklogs/log
+
+on post-fs
+    start boot-hal-1-0
