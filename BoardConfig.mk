@@ -48,16 +48,16 @@ TARGET_USES_UEFI := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
-    androidboot.console=ttyMSM0 \
-    androidboot.hardware=qcom \
-    androidboot.memcg=1 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    lpm_levels.sleep_disabled=1 \
-    msm_rtb.filter=0x237 \
-    firmware_class.path=/vendor/firmware_mnt/image \
-    service_locator.enable=1 \
-    swiotlb=2048 \
-    video=vfb:640x400,bpp=32,memsize=3072000
+	androidboot.console=ttyMSM0 \
+	androidboot.hardware=qcom \
+	androidboot.memcg=1 \
+	androidboot.usbcontroller=a600000.dwc3 \
+	lpm_levels.sleep_disabled=1 \
+	msm_rtb.filter=0x237 \
+	firmware_class.path=/vendor/firmware_mnt/image \
+	service_locator.enable=1 \
+	swiotlb=2048 \
+	video=vfb:640x400,bpp=32,memsize=3072000
 
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
@@ -111,11 +111,11 @@ BOARD_SUPER_PARTITION_SIZE := 15032385536
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6441926656
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := \
-    system \
-		system_ext \
-    vendor \
-    product \
-    odm
+	system \
+	system_ext \
+	vendor \
+	product \
+	odm
 
 # Partitions (listed in the file) to be wiped under recovery.
 TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
@@ -130,15 +130,15 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_NO_RECOVERY := false
 TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hidl.base@1.0 \
-    ashmemd \
-    ashmemd_aidl_interface-cpp \
-    bootctrl.$(TARGET_BOARD_PLATFORM).recovery \
-    libashmemd_client \
-    libcap \
-    libion \
-    libpcrecpp \
-    libxml2
+	android.hidl.base@1.0 \
+	ashmemd \
+	ashmemd_aidl_interface-cpp \
+	bootctrl.$(TARGET_BOARD_PLATFORM).recovery \
+	libashmemd_client \
+	libcap \
+	libion \
+	libpcrecpp \
+	libxml2
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
@@ -154,7 +154,6 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
-
 
 # Extras
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -179,7 +178,8 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_BIND_SYSTEM := true
 TW_NO_EXFAT_FUSE := true
 TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+"ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+
 TW_RECOVERY_ADDITIONAL_RELINK_BINARY_FILES += \
     $(TARGET_OUT_EXECUTABLES)/ashmemd
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
@@ -190,7 +190,6 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpcrecpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
-
 
 # TWRP Debug Flags
 TARGET_USES_LOGD := true
