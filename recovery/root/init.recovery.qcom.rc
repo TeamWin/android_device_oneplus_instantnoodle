@@ -27,6 +27,13 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+service patchfakepartitions-service /sbin/patchfakepartitions-service.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service unified-script /system/bin/unified-script.sh
     user root
     group root
@@ -53,6 +60,9 @@ on boot
 
     #chmod 0777 mount-dynamic-rw.sh
     chmod 0777 /system/bin/unified-script.sh
+    chmod 0777 /system/bin/patchfakepartitions-service.sh
+    
+    start patchfakepartitions-service
     start unified-script
     #start mount-dynamic-rw
 
@@ -61,11 +71,11 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
     # This must be under on fs, otherwise update_engine wont map the partitions and exit installation
-    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_a
-    symlink /dev/block/bootdevice/by-name/oem_stanvbk /dev/block/bootdevice/by-name/oem_stanvbk_b
-    symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_a
-    symlink /dev/block/bootdevice/by-name/oem_dycnvbk /dev/block/bootdevice/by-name/oem_dycnvbk_b
-
+    symlink /dev/block/bootdevice/by-name/mdm_oem_stanvbk /dev/block/bootdevice/by-name/mdm_oem_stanvbk_a
+    symlink /dev/block/bootdevice/by-name/mdm_oem_stanvbk /dev/block/bootdevice/by-name/mdm_oem_stanvbk_b
+    symlink /dev/block/bootdevice/by-name/spunvm /dev/block/bootdevice/by-name/spunvm_a
+    symlink /dev/block/bootdevice/by-name/spunvm /dev/block/bootdevice/by-name/spunvm_b
+    
     # Set fscklog permission
     chown root system /dev/fscklogs/log
     chmod 0770 /dev/fscklogs/log
