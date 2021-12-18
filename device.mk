@@ -48,6 +48,8 @@ PRODUCT_PACKAGES += \
 	bootctrl.$(PRODUCT_PLATFORM) \
 	bootctrl.$(PRODUCT_PLATFORM).recovery
 
+TW_LOAD_VENDOR_MODULES := "touchscreen.ko aw8697.ko adsp_loader_dlkm.ko oplus_chg.ko"
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
