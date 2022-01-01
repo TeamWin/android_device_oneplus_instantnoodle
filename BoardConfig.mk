@@ -48,16 +48,17 @@ TARGET_USES_UEFI := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
-	androidboot.console=ttyMSM0 \
-	androidboot.hardware=qcom \
-	androidboot.memcg=1 \
-	androidboot.usbcontroller=a600000.dwc3 \
-	lpm_levels.sleep_disabled=1 \
-	msm_rtb.filter=0x237 \
-	firmware_class.path=/vendor/firmware_mnt/image \
-	service_locator.enable=1 \
-	swiotlb=2048 \
-	video=vfb:640x400,bpp=32,memsize=3072000
+    androidboot.console=ttyMSM0 \
+    androidboot.hardware=qcom \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3 \
+    androidboot.selinux=permissive \
+    lpm_levels.sleep_disabled=1 \
+    msm_rtb.filter=0x237 \
+    firmware_class.path=/vendor/firmware_mnt/image \
+    service_locator.enable=1 \
+    swiotlb=2048 \
+    video=vfb:640x400,bpp=32,memsize=3072000
 
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
@@ -177,9 +178,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_BIND_SYSTEM := true
 TW_NO_EXFAT_FUSE := true
-TW_OVERRIDE_SYSTEM_PROPS := \
-"ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
-
+TW_OVERRIDE_SYSTEM_PROPS := "ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.build.version.ota"
 TW_RECOVERY_ADDITIONAL_RELINK_BINARY_FILES += \
     $(TARGET_OUT_EXECUTABLES)/ashmemd
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
