@@ -201,4 +201,7 @@ TW_EXCLUDE_ENCRYPTED_BACKUPS := false
 TW_SCREEN_BLANK_ON_BOOT := true
 
 USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := /mnt/Building/template_twrp
+RECOVERY_INSTALLER_PATH := $(TOP)/external/magisk-prebuilt
+
+
+
