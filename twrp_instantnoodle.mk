@@ -30,5 +30,3 @@ PRODUCT_MANUFACTURER := oneplus
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)/device.mk)
 
-# device specific twrp version
-TW_DEVICE_VERSION  := infected-b7
