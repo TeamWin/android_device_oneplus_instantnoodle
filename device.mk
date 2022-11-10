@@ -8,13 +8,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from virtual AB OTA config
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-LOCAL_PATH := device/oneplus/OnePlus8T
+LOCAL_PATH := device/OnePlus/instantnoodlep
 
 #SHIPPING API
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 29
 
 #VNDK API
-PRODUCT_TARGET_VNDK_VERSION := 32
+#PRODUCT_TARGET_VNDK_VERSION := 32
 
 # define hardware platform
 PRODUCT_PLATFORM := kona
@@ -124,5 +124,5 @@ PRODUCT_PACKAGES_ENG += \
 
 #TWRP
 PRODUCT_COPY_FILES += \
-    device/oneplus/OnePlus8T/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
-    device/oneplus/OnePlus8T/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \
+    device/OnePlus/instantnoodlep/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
+    device/OnePlus/instantnoodlep/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \

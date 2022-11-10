@@ -3,15 +3,15 @@ export TARGET_ARCH="arm64-v8a"
 # Some about us
 #export FOX_VARIANT="A12"
 export FOX_VERSION="R12.1"
-export OF_MAINTAINER=Wishmasterflo
+export OF_MAINTAINER=saurabh_parab
 
 # Build environment stuffs
-export FOX_BUILD_DEVICE="OnePlus8T"
+export FOX_BUILD_DEVICE="OnePlus8Pro"
 export ALLOW_MISSING_DEPENDENCIES=true
 export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
 export LC_ALL="C"
-export TARGET_DEVICE_ALT="kebab, Kebab, instantnoodle, instantnoodlep, lemonades, lemonkebab, OnePlus 8, OnePlus8t, OnePlus 8t, OnePlus 8 Pro"
-export OF_TARGET_DEVICES="kebab, Kebab, instantnoodle, instantnoodlep, lemonades, lemonkebab, OnePlus 8, OnePlus8t, OnePlus 8t, OnePlus 8 Pro"
+export TARGET_DEVICE_ALT="kebab, Kebab, instantnoodle, instantnoodlep, lemonades, lemonkebab, OnePlus 8, OnePlus8t, OnePlus 8t, OnePlus 8 Pro, OnePlus8Pro"
+export OF_TARGET_DEVICES="kebab, Kebab, instantnoodle, instantnoodlep, lemonades, lemonkebab, OnePlus 8, OnePlus8t, OnePlus 8t, OnePlus 8 Pro, OnePlus8Pro"
 
 # Use magisk boot for patching
 export OF_USE_MAGISKBOOT=1
@@ -58,6 +58,10 @@ export FOX_BUGGED_AOSP_ARB_WORKAROUND="1601559499"
 
 # -- add settings for R12.1 --
 export OF_QUICK_BACKUP_LIST="/boot;/data;/super;"
+
+# ensure that /sdcard is bind-unmounted before f2fs data repair or format (required for FBE v1)
+export OF_UNBIND_SDCARD_F2FS=1
+
 
 # -- add settings for Android 12 --
 # export OF_FIX_DECRYPTION_ON_DATA_MEDIA="1"
