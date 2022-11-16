@@ -5,9 +5,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit from virtual AB OTA config
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
 LOCAL_PATH := device/OnePlus/instantnoodlep
 
 #SHIPPING API
@@ -103,7 +100,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # enable USB Storage
-TW_NO_USB_STORAGE := false
+TW_NO_USB_STORAGE := true
 
 # set refreshrate
 TW_FRAMERATE := 60
