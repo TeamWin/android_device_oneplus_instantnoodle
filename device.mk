@@ -100,7 +100,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # enable USB Storage
-TW_NO_USB_STORAGE := true
+TW_NO_USB_STORAGE := false
 
 # set refreshrate
 TW_FRAMERATE := 60
