@@ -12,3 +12,6 @@
     "revision": "android-12.1"
   }
 ]
+
+
+TeamWin/android_device_qcom_twrp-common -b android-12.1 device/qcom/twrp-common

@@ -5,7 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-LOCAL_PATH := device/OnePlus/instantnoodlep
+LOCAL_PATH := device/oneplus/instantnoodle
 
 #SHIPPING API
 PRODUCT_SHIPPING_API_LEVEL := 29
@@ -121,5 +121,5 @@ PRODUCT_PACKAGES_ENG += \
 
 #TWRP
 PRODUCT_COPY_FILES += \
-    device/OnePlus/instantnoodlep/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
-    device/OnePlus/instantnoodlep/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \
+    device/oneplus/instantnoodle/prebuilt/systemmanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/system/manifest.xml \
+    device/oneplus/instantnoodle/prebuilt/vendormanifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/manifest.xml \

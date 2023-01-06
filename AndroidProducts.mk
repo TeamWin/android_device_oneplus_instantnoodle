@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_instantnoodlep.mk
+    $(LOCAL_DIR)/twrp_instantnoodle.mk
 
