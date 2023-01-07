@@ -6,7 +6,7 @@ export FOX_VERSION="R12.1"
 export OF_MAINTAINER=saurabh_parab
 
 # Build environment stuffs
-export FOX_BUILD_DEVICE="OnePlus8Pro"
+export FOX_BUILD_DEVICE="OnePlus8"
 export ALLOW_MISSING_DEPENDENCIES=true
 export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
 export LC_ALL="C"
@@ -51,6 +51,7 @@ export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
 export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=0
+export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
 
 # For some reason this is dumb and necessary
 export FOX_BUGGED_AOSP_ARB_WORKAROUND="1601559499"
