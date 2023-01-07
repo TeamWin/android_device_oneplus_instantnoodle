@@ -55,18 +55,8 @@ TARGET_USES_UEFI := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # Kernel
-BOARD_KERNEL_CMDLINE := \
-    androidboot.console=ttyMSM0 \
-    androidboot.hardware=qcom \
-    androidboot.memcg=1 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.selinux=permissive \
-    firmware_class.path=/vendor/firmware_mnt/image \
-    lpm_levels.sleep_disabled=1 \
-    msm_rtb.filter=0x237 \
-    service_locator.enable=1 \
-    swiotlb=2048 \
-    video=vfb:640x400,bpp=32,memsize=3072000
+BOARD_KERNEL_CMDLINE := androidboot.console=ttyMSM0 androidboot.hardware=qcom androidboot.memcg=1 androidboot.usbcontroller=a600000.dwc3 cgroup.memory=nokmem,nosocket loop.max_part=7 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x237 reboot=panic_warm service_locator.enable=1 swiotlb=2048
+
 
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
@@ -74,9 +64,21 @@ BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE          := 0x00000000
 BOARD_KERNEL_TAGS_OFFSET   := 0x00000100
 BOARD_KERNEL_OFFSET        := 0x00008000
-BOARD_KERNEL_SECOND_OFFSET := 0x00f00000
+BOARD_KERNEL_SECOND_OFFSET := 0x00000000
 BOARD_RAMDISK_OFFSET       := 0x01000000
 BOARD_DTB_OFFSET           := 0x01f00000
+BOARD_OS_VERSION := 13.0.0
+BOARD_OS_PATCH_LEVEL := 2022-12
+BOARD_HASH_TYPE := sha1
+BOARD_RECOVERY_DTBO_SIZE := 2291928
+BOARD_RECOVERY_DTBO_OFFSET := 69525504
+BOARD_HEADER_SIZE := 1660
+BOARD_DTB_SIZE := 9404950
+BOARD_DTB_OFFSET := 0x01f00000
+
+
+
+
 TARGET_KERNEL_ARCH := arm64
 TARGET_NO_KERNEL := false
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
