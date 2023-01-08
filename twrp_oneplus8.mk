@@ -21,3 +21,5 @@ PRODUCT_NAME := twrp_oneplus8
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := IN2013
 PRODUCT_MANUFACTURER := oneplus
+
+TW_DEVICE_VERSION := infected-b2
